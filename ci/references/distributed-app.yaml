@@ -8,6 +8,7 @@ spec:
   destination:
     namespace: distributed-app
     server: https://kubernetes.default.svc
+  project: edgefarm-applications
   source:
     path: applications/distributed-app.yaml
     repoURL: https://github.com/edgefarm-hands-on/hands-on-applications
