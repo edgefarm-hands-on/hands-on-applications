@@ -1,0 +1,16 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: applications
+  namespace: edgefarm-applications
+spec:
+  destination:
+    namespace: edgefarm-applications
+    server: https://kubernetes.default.svc
+  source:
+    path: ci/applications.yaml
+    repoURL: https://github.com/edgefarm-hands-on/hands-on-applications
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

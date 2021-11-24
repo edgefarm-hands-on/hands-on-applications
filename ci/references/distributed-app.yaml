@@ -1,0 +1,16 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: distributed-app
+  namespace: edgefarm-applications
+spec:
+  destination:
+    namespace: distributed-app
+    server: https://kubernetes.default.svc
+  source:
+    path: applications/distributed-app.yaml
+    repoURL: https://github.com/edgefarm-hands-on/hands-on-applications
+    targetRevision: distributed-app
+  syncPolicy:
+    automated: {}
