@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: edgefarm-applications
   source:
-    path: ci/references
+    path: applications/distributed-app/manifests
     repoURL: https://github.com/edgefarm-hands-on/hands-on-applications
     targetRevision: distributed-app
   syncPolicy:
