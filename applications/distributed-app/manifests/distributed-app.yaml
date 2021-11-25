@@ -2,7 +2,6 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: distributed-app
-  namespace: distributed-app
 spec:
   components:
     - name: main-module
