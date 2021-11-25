@@ -12,6 +12,6 @@ spec:
   source:
     path: ci/references
     repoURL: https://github.com/edgefarm-hands-on/hands-on-applications
-    targetRevision: HEAD
+    targetRevision: distributed-app
   syncPolicy:
     automated: {}
