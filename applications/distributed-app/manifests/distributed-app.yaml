@@ -9,6 +9,11 @@ spec:
       properties:
         image: nginx
         name: nginx-main
+    - name: edge-module-1
+      type: edge-worker
+      properties:
+        image: nginx
+        name: nginx-edge-1
     - name: edge-module-2
       type: edge-worker
       properties:
@@ -16,3 +21,7 @@ spec:
         name: nginx-edge-2
     - name: distributed-app-network
       type: application-network
+      properties:
+        usernames:
+          - edge-module-1
+          - edge-module-2
