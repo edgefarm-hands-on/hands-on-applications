@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: nats-box
+spec:
+  components:
+    - name: nats-box
+      type: edge-worker
+      properties:
+        image: natsio/nats-box:latest
+        name: nats-box
+        command:
+          - /bin/sh
+          - -c
+          - --
+        args:
+          - "while true; do sleep 1; done;"
+    - name: nats-box-network
+      type: application-network
+      properties:
+        usernames:
+          - nats-box
