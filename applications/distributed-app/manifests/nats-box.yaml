@@ -7,7 +7,7 @@ spec:
     - name: nats-box
       type: edge-worker
       properties:
-        image: synadia/nats-box:latest
+        image: natsio/nats-box:latest
         name: nats-box
         command:
           - /bin/sh

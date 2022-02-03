@@ -4,24 +4,45 @@ metadata:
   name: distributed-app
 spec:
   components:
-    - name: main-module
-      type: main-worker
-      properties:
-        image: nginx
-        name: nginx-main
     - name: edge-module-1
       type: edge-worker
       properties:
-        image: nginx
-        name: nginx-edge-1
+        image: synadia/nats-box:latest
+        name: nats-box1
+        command:
+          - /bin/sh
+          - -c
+          - --
+        args:
+          - "while true; do sleep 1; done;"
     - name: edge-module-2
       type: edge-worker
       properties:
-        image: nginx
-        name: nginx-edge-2
+        image: synadia/nats-box:latest
+        name: nats-box1
+        command:
+          - /bin/sh
+          - -c
+          - --
+        args:
+          - "while true; do sleep 1; done;"
+        # network-rbac:
+        #   - heike-flo
     - name: distributed-app-network
-      type: application-network
-      properties:
-        usernames:
-          - edge-module-1
-          - edge-module-2
+      type:
+        application-network
+        # usernames:
+        #   - asdf
+        #   - asdf2
+    # - name: distrubuted-app-network-rbac
+    #   type: network-rbac
+    #     heike-flo:
+    #       write:
+    #         - heike
+    #         - test
+    #       read:
+    #         - flo
+    #         - asdf
+    #     kaesbrot-klausi:
+    #       read:
+    #         - klausi
